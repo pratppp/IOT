@@ -1,0 +1,34 @@
+int ledPin = 13;
+int buzzPin = 5;
+int pushbutton1Pin = 9;
+int pushbutton2Pin = 12;
+int pushbutton1Value, pushbutton2Value;
+
+void setup() \
+{
+  Serial.begin(9600);
+  pinMode(ledPin, OUTPUT);
+  pinMode(buzzPin, OUTPUT);
+  pinMode(pushbutton1Pin, INPUT);
+  pinMode(pushbutton2Pin, INPUT);
+}
+void loop() {
+  pushbutton1Value = digitalRead(pushbutton1Pin);
+  pushbutton2Value = digitalRead(pushbutton2Pin);
+  if(pushbutton1Value == 1)
+  {
+    digitalWrite(ledPin, HIGH);
+  }
+    if(pushbutton1Value == 0)
+  {
+    digitalWrite(ledPin, LOW);
+  }
+    if(pushbutton2Value == 1)  
+  {
+    digitalWrite(buzzPin, HIGH);
+  }
+    if(pushbutton2Value == 0)
+  {
+    digitalWrite(buzzPin, LOW);
+  }
+}
